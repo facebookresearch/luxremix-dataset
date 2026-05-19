@@ -1,0 +1,12 @@
+__pycache__/
+.claude
+
+# Local validation run output (logs + JSONL reports, see validate_shards.py)
+*.log
+validation_report_*.jsonl
+vr_*.jsonl
+reports/
+logs/
+
+# Local packaging output
+shards/

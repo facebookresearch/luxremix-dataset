@@ -1,0 +1,10 @@
+numpy>=1.23
+opencv-python>=4.8
+Pillow>=10.0
+torch>=2.0
+tqdm>=4.65
+requests>=2.31
+
+# Optional: needed only for AgX-accurate tonemapping in dataset.py and
+# generate_vis_grid.py. The fallback path uses Reinhard + sRGB gamma.
+# Install with: pip install PyOpenColorIO

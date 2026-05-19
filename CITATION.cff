@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use the LuxRemix dataset or this code in your research, please cite the paper below."
+title: "LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes"
+abstract: "Dataset and reference code for LuxRemix, a method for decomposing and remixing the lighting of indoor scenes."
+url: "https://luxremix.github.io"
+license: "LicenseRef-Aria-Synthetic-Environments-Dataset"
+authors:
+  - family-names: Liang
+    given-names: Ruofan
+  - family-names: Müller
+    given-names: Norman
+  - family-names: Weber
+    given-names: Ethan
+  - family-names: Zauss
+    given-names: Duncan
+  - family-names: Vijaykumar
+    given-names: Nandita
+  - family-names: Kontschieder
+    given-names: Peter
+  - family-names: Richardt
+    given-names: Christian
+preferred-citation:
+  type: conference-paper
+  title: "LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes"
+  authors:
+    - family-names: Liang
+      given-names: Ruofan
+    - family-names: Müller
+      given-names: Norman
+    - family-names: Weber
+      given-names: Ethan
+    - family-names: Zauss
+      given-names: Duncan
+    - family-names: Vijaykumar
+      given-names: Nandita
+    - family-names: Kontschieder
+      given-names: Peter
+    - family-names: Richardt
+      given-names: Christian
+  collection-title: "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
+  year: 2026
+  url: "https://luxremix.github.io"
+  identifiers:
+    - type: other
+      value: "arXiv:2601.15283"
+      description: "arXiv preprint"

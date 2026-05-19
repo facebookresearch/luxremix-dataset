@@ -1,0 +1,1128 @@
+{
+  "014649.0003": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    },
+    "1007": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014651.0001": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "cos_threshold": 0.9987806677818298,
+      "strategy": "lgt_src_cone"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "cos_threshold": 0.9987374544143677,
+      "strategy": "lgt_src_cone"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_obj_convex"
+    }
+  },
+  "014653.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014655.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "cos_threshold": 0.9984615445137024,
+      "strategy": "lgt_src_cone"
+    },
+    "1002": {
+      "cos_threshold": 0.9984774589538574,
+      "strategy": "lgt_src_cone"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "cos_threshold": 0.9989440441131592,
+      "strategy": "lgt_src_cone"
+    },
+    "1006": {
+      "cos_threshold": 0.9993536472320557,
+      "strategy": "lgt_src_cone"
+    }
+  },
+  "014656.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "cos_threshold": 0.9992947578430176,
+      "strategy": "lgt_src_cone"
+    }
+  },
+  "014657.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "cos_threshold": 0.9991860389709473,
+      "strategy": "lgt_src_cone"
+    }
+  },
+  "014658.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014659.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "cos_threshold": 0.9981545209884644,
+      "strategy": "lgt_src_cone"
+    },
+    "1005": {
+      "strategy": "lgt_obj"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014667.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1005": {
+      "cos_threshold": 0.9992501139640808,
+      "strategy": "lgt_src_cone"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014675.0003": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "cos_threshold": 0.9989364743232727,
+      "strategy": "lgt_src_cone"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014677.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014680.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "cos_threshold": 0.9990935325622559,
+      "strategy": "lgt_src_cone"
+    },
+    "1007": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014682.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "cos_threshold": 0.9982113242149353,
+      "strategy": "lgt_src_cone"
+    }
+  },
+  "014683.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1002": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1003": {
+      "cos_threshold": 0.9983764886856079,
+      "strategy": "lgt_src_cone"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014684.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_obj"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014687.0001": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014690.0001": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_obj"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014691.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_obj_convex"
+    }
+  },
+  "014695.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014696.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "cos_threshold": 0.9992711544036865,
+      "strategy": "lgt_src_cone"
+    },
+    "1002": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_obj"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014700.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014701.0003": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "cos_threshold": 0.9983379244804382,
+      "strategy": "lgt_src_cone"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    },
+    "1007": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014702.0001": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    },
+    "1007": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014709.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1002": {
+      "cos_threshold": 0.9982258677482605,
+      "strategy": "lgt_src_cone"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_obj_convex"
+    }
+  },
+  "014713.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1005": {
+      "strategy": "lgt_obj_convex"
+    }
+  },
+  "014727.0001": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014728.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1003": {
+      "strategy": "lgt_obj"
+    }
+  },
+  "014731.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "cos_threshold": 0.9985554218292236,
+      "strategy": "lgt_src_cone"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "cos_threshold": 0.9992575645446777,
+      "strategy": "lgt_src_cone"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "cos_threshold": 0.9983478784561157,
+      "strategy": "lgt_src_cone"
+    },
+    "1007": {
+      "strategy": "lgt_src"
+    },
+    "1008": {
+      "strategy": "lgt_src"
+    },
+    "1009": {
+      "strategy": "lgt_src"
+    },
+    "1010": {
+      "strategy": "lgt_src"
+    },
+    "1011": {
+      "strategy": "lgt_src"
+    },
+    "1012": {
+      "strategy": "lgt_src"
+    },
+    "1013": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014733.0003": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    }
+  },
+  "014739.0003": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_obj"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014749.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1002": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "cos_threshold": 0.9987420439720154,
+      "strategy": "lgt_src_cone"
+    },
+    "1007": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014764.0001": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1002": {
+      "cos_threshold": 0.9993469715118408,
+      "strategy": "lgt_src_cone"
+    },
+    "1003": {
+      "strategy": "lgt_obj"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_obj"
+    }
+  },
+  "014773.0001": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "cos_threshold": 0.9986974000930786,
+      "strategy": "lgt_src_cone"
+    }
+  },
+  "014774.0001": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "cos_threshold": 0.9987383484840393,
+      "strategy": "lgt_src_cone"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1005": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1006": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1007": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014782.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_obj_convex"
+    }
+  },
+  "014783.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014785.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "cos_threshold": 0.9990994930267334,
+      "strategy": "lgt_src_cone"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "cos_threshold": 0.999071478843689,
+      "strategy": "lgt_src_cone"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_obj"
+    },
+    "1006": {
+      "cos_threshold": 0.9992973804473877,
+      "strategy": "lgt_src_cone"
+    },
+    "1007": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014865.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "cos_threshold": 0.9991188049316406,
+      "strategy": "lgt_src_cone"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014866.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_obj"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "cos_threshold": 0.9981781244277954,
+      "strategy": "lgt_src_cone"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014872.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "cos_threshold": 0.9992574453353882,
+      "strategy": "lgt_src_cone"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    },
+    "1007": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014874.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "cos_threshold": 0.9986951351165771,
+      "strategy": "lgt_src_cone"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_obj"
+    }
+  },
+  "014878.0003": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1002": {
+      "cos_threshold": 0.9982783198356628,
+      "strategy": "lgt_src_cone"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "cos_threshold": 0.9992778301239014,
+      "strategy": "lgt_src_cone"
+    }
+  },
+  "014905.0001": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1002": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "cos_threshold": 0.9985254406929016,
+      "strategy": "lgt_src_cone"
+    },
+    "1006": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1007": {
+      "strategy": "lgt_src"
+    }
+  },
+  "014908.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "cos_threshold": 0.9992189407348633,
+      "strategy": "lgt_src_cone"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "015016.0002": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1006": {
+      "cos_threshold": 0.9987775087356567,
+      "strategy": "lgt_src_cone"
+    }
+  },
+  "015037.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_src"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_obj"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "015060.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "cos_threshold": 0.9989411234855652,
+      "strategy": "lgt_src_cone"
+    },
+    "1005": {
+      "strategy": "lgt_src"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  },
+  "015063.0004": {
+    "1000": {
+      "strategy": "lgt_src"
+    },
+    "1001": {
+      "strategy": "lgt_obj"
+    },
+    "1002": {
+      "strategy": "lgt_src"
+    },
+    "1003": {
+      "strategy": "lgt_src"
+    },
+    "1004": {
+      "strategy": "lgt_src"
+    },
+    "1005": {
+      "strategy": "lgt_obj_convex"
+    },
+    "1006": {
+      "strategy": "lgt_src"
+    }
+  }
+}
