@@ -29,18 +29,21 @@ Visit the dataset portal:
 
 > [https://ai.meta.com/datasets/luxremix-dataset/](https://ai.meta.com/datasets/luxremix-dataset/)
 
-Accept the license and download `luxremix_urls.txt`. The file is one
-HTTPS URL per shard (preserving the original filenames `training-NNNN.tar`
-and `test-NNNN.tar`). The portal rotates these URLs roughly every six
-months; just re-download the list when the old ones stop working.
+Accept the license and download `dataset-shards.txt`. The file is a TSV
+with header `file_name<TAB>cdn_link` and one row per shard — the
+`file_name` column preserves the original shard names (`training-NNNN.tar`
+/ `test-NNNN.tar`) and `cdn_link` is the HTTPS URL the script will fetch.
+The portal rotates these URLs roughly every six months; just re-download
+the list when the old ones stop working.
 
 ## 3. Download
 
 ### Smoke test: one test shard
 
 ```bash
-head -1 luxremix_urls.txt > one_test.txt        # pick any single URL
-python download.py one_test.txt --output-dir ./lx --split test --unpack
+# Keep the header + the first data row so the parser is happy.
+(head -1 dataset-shards.txt && sed -n '2p' dataset-shards.txt) > one_test.tsv
+python download.py one_test.tsv --output-dir ./lx --split test --unpack
 ```
 
 This downloads ~8 GB, unpacks it into `./lx/<scene_id>/`, and deletes the
@@ -49,14 +52,14 @@ tar after a successful unpack. Expect ~30–60 s of network time.
 ### Full test split (40 shards, ~300 GB)
 
 ```bash
-python download.py luxremix_urls.txt --output-dir ./lx --split test \
+python download.py dataset-shards.txt --output-dir ./lx --split test \
     --unpack --workers 4
 ```
 
 ### Full training split (1,204 shards, ~9.4 TB)
 
 ```bash
-python download.py luxremix_urls.txt --output-dir ./lx --split training \
+python download.py dataset-shards.txt --output-dir ./lx --split training \
     --workers 4 --keep-tars
 ```
 

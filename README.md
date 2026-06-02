@@ -2,7 +2,7 @@
 
 **LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes**  
 Ruofan Liang, Norman Müller, Ethan Weber, Duncan Zauss, Nandita Vijaykumar, Peter Kontschieder, Christian Richardt  
-*CVPR 2026* · [Project page](https://luxremix.github.io) · [arXiv:2601.15283](https://arxiv.org/abs/2601.15283)
+*CVPR 2026* · [Project page](https://luxremix.github.io) · [arXiv:2601.15283](https://arxiv.org/abs/2601.15283) · [Download](https://ai.meta.com/datasets/luxremix-dataset/)
 
 LuxRemix is a Blender-rendered dataset of indoor scenes with per-light
 decomposition (one-light-at-a-time / OLAT), produced as panoramic
@@ -39,10 +39,11 @@ pip install -r requirements.txt
 git submodule update --init  # AgX OCIO config
 
 # 2. Get the current shard URL list from the dataset portal:
-#    https://ai.meta.com/datasets/luxremix-dataset/  (download `luxremix_urls.txt`)
+#    https://ai.meta.com/datasets/luxremix-dataset/  (download `dataset-shards.txt`,
+#    a TSV with header `file_name<TAB>cdn_link` and one row per shard)
 
 # 3. Download (and unpack) one test shard as a smoke test
-head -1 luxremix_urls.txt > one_shard.txt   # pick the first URL
+(head -1 dataset-shards.txt && sed -n '2p' dataset-shards.txt) > one_shard.txt
 python download.py one_shard.txt --output-dir ./luxremix --split test \
     --unpack
 
@@ -54,7 +55,7 @@ python examples/training_loop.py ./luxremix/
 ```
 
 For the full dataset (~9.7 TB), run step 3 against the full
-`luxremix_urls.txt` (drop `--unpack` if you'd rather keep tars on disk).
+`dataset-shards.txt` (drop `--unpack` if you'd rather keep tars on disk).
 [USAGE.md](docs/USAGE.md) covers every flag.
 
 ## What's in this repo

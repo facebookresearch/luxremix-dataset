@@ -1,39 +1,39 @@
 #!/usr/bin/env python3
 # Copyright (c) Meta Platforms, Inc. and affiliates.
-"""Download LuxRemix dataset shards from a list of HTTPS URLs.
+"""Download LuxRemix dataset shards from the Meta AI Datasets portal.
 
-Reads a text file with one URL per line (fetched from the dataset portal
-at https://ai.meta.com/datasets/luxremix-dataset/) and downloads the
-corresponding tar shards in parallel. Optionally unpacks each tar after
-download.
+Reads a TSV file produced by the dataset portal at
+https://ai.meta.com/datasets/luxremix-dataset/ — `dataset-shards.txt`,
+with a header line ``file_name\\tcdn_link`` followed by one
+``<filename>\\t<https-url>`` row per shard — and downloads each tar in
+parallel. Optionally unpacks each tar after download.
 
-The script infers the split (training vs test) from each shard's filename
-prefix (``training-`` / ``test-``), so a ``--split`` flag can filter the
-URL list without editing the source file.
+The script uses each shard's ``file_name`` (e.g. ``training-0042.tar``)
+both for on-disk naming and to infer the split (training vs test), so a
+``--split`` flag can filter the list without editing the source file.
 
 Usage:
     # Download everything to /data/luxremix/
-    python download.py luxremix_urls.txt --output-dir /data/luxremix
+    python download.py dataset-shards.txt --output-dir /data/luxremix
 
     # Test split only, unpack each tar and delete it afterwards
-    python download.py luxremix_urls.txt --output-dir /data/luxremix \\
+    python download.py dataset-shards.txt --output-dir /data/luxremix \\
         --split test --unpack
 
     # Training split only, keep tars after download (no unpack)
-    python download.py luxremix_urls.txt --output-dir /data/luxremix \\
+    python download.py dataset-shards.txt --output-dir /data/luxremix \\
         --split training --keep-tars
 """
 
 import argparse
+import csv
 import logging
-import os
 import sys
 import tarfile
 import threading
 import time
 from concurrent.futures import as_completed, ThreadPoolExecutor
 from pathlib import Path
-from urllib.parse import urlparse
 
 import requests
 from tqdm import tqdm
@@ -44,24 +44,35 @@ CHUNK_SIZE = 8 * 1024 * 1024  # 8 MiB
 DEFAULT_REQUEST_TIMEOUT = (30, 300)  # (connect, read) seconds
 
 
-def read_url_list(path: Path) -> list[str]:
-    """Read non-blank, non-comment lines as URLs."""
-    urls: list[str] = []
-    with open(path) as f:
-        for raw in f:
-            line = raw.strip()
-            if not line or line.startswith("#"):
-                continue
-            urls.append(line)
-    return urls
+def read_shard_list(path: Path) -> list[tuple[str, str]]:
+    """Parse the portal TSV into `(shard_name, url)` pairs.
 
-
-def shard_name_from_url(url: str) -> str:
-    """Extract `training-0042` from `https://.../training-0042.tar`."""
-    name = os.path.basename(urlparse(url).path)
-    if name.endswith(".tar"):
-        name = name[:-4]
-    return name
+    The portal serves a TSV with at least the columns `file_name` and
+    `cdn_link`. We trust `file_name` for naming and split inference;
+    the CDN URL path is an opaque hash and cannot be used to recover
+    the shard name. Extra columns (e.g. a future `sha256`) are ignored.
+    """
+    required = ("file_name", "cdn_link")
+    pairs: list[tuple[str, str]] = []
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        missing = [c for c in required if c not in (reader.fieldnames or [])]
+        if missing:
+            raise SystemExit(
+                f"{path}: TSV is missing required column(s) {missing}; "
+                f"got header {reader.fieldnames}. Did you download the "
+                f"wrong file from https://ai.meta.com/datasets/luxremix-dataset/ ?"
+            )
+        for row in reader:
+            file_name, url = row["file_name"], row["cdn_link"]
+            if not file_name.endswith(".tar"):
+                raise SystemExit(
+                    f"{path}:{reader.line_num}: file_name does not end in '.tar': "
+                    f"{file_name!r}"
+                )
+            pairs.append((file_name.removesuffix(".tar"), url))
+    pairs.sort()
+    return pairs
 
 
 def split_of(shard_name: str) -> str | None:
@@ -73,16 +84,13 @@ def split_of(shard_name: str) -> str | None:
     return None
 
 
-def filter_urls(urls: list[str], wanted_split: str) -> list[str]:
-    """Keep only URLs whose shard belongs to the requested split."""
+def filter_shards(
+    shards: list[tuple[str, str]], wanted_split: str
+) -> list[tuple[str, str]]:
+    """Keep only `(shard_name, url)` pairs whose shard belongs to the requested split."""
     if wanted_split == "all":
-        return urls
-    out = []
-    for u in urls:
-        s = split_of(shard_name_from_url(u))
-        if s == wanted_split:
-            out.append(u)
-    return out
+        return shards
+    return [(name, url) for name, url in shards if split_of(name) == wanted_split]
 
 
 def download_with_retries(
@@ -126,7 +134,8 @@ def unpack_tar(tar_path: Path, dest_root: Path) -> None:
         tf.extractall(dest_root)
 
 
-def process_url(
+def process_shard(
+    shard_name: str,
     url: str,
     output_dir: Path,
     unpack: bool,
@@ -135,7 +144,6 @@ def process_url(
     print_lock: threading.Lock,
 ) -> dict:
     """Download (and optionally unpack) one shard."""
-    shard_name = shard_name_from_url(url)
     split = split_of(shard_name) or "unknown"
     tar_path = output_dir / f"{shard_name}.tar"
     result: dict = {
@@ -175,9 +183,10 @@ def main() -> None:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
     parser.add_argument(
-        "url_list",
+        "shard_list",
         type=Path,
-        help="Text file with one HTTPS URL per line (fetched from the portal)",
+        help="TSV file `dataset-shards.txt` from the portal "
+        "(header: `file_name<TAB>cdn_link`, one row per shard)",
     )
     parser.add_argument(
         "--output-dir",
@@ -223,21 +232,21 @@ def main() -> None:
         level=logging.DEBUG if args.verbose else logging.INFO,
     )
 
-    if not args.url_list.is_file():
-        raise SystemExit(f"URL list file not found: {args.url_list}")
+    if not args.shard_list.is_file():
+        raise SystemExit(f"shard list file not found: {args.shard_list}")
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
-    all_urls = read_url_list(args.url_list)
-    urls = filter_urls(all_urls, args.split)
-    if not urls:
+    all_shards = read_shard_list(args.shard_list)
+    shards = filter_shards(all_shards, args.split)
+    if not shards:
         raise SystemExit(
-            f"no URLs match --split={args.split} (read {len(all_urls)} from "
-            f"{args.url_list})"
+            f"no shards match --split={args.split} (read {len(all_shards)} from "
+            f"{args.shard_list})"
         )
 
     logger.info(
-        f"Downloading {len(urls)} shards (split={args.split}, "
+        f"Downloading {len(shards)} shards (split={args.split}, "
         f"workers={args.workers}, unpack={args.unpack})"
     )
 
@@ -248,15 +257,16 @@ def main() -> None:
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         futs = {
             pool.submit(
-                process_url,
+                process_shard,
+                shard_name,
                 url,
                 args.output_dir,
                 args.unpack,
                 args.keep_tars,
                 args.retries,
                 print_lock,
-            ): url
-            for url in urls
+            ): shard_name
+            for shard_name, url in shards
         }
         for fut in tqdm(
             as_completed(futs), total=len(futs), desc="shards", unit="shard"
@@ -273,7 +283,7 @@ def main() -> None:
     print("=" * 60)
     print(" DOWNLOAD SUMMARY")
     print("=" * 60)
-    print(f"  Total URLs:           {len(urls)}")
+    print(f"  Total shards:         {len(shards)}")
     print(f"  Downloaded:           {downloaded}")
     print(f"  Already cached:       {cached}")
     print(f"  Errors:               {errored}")

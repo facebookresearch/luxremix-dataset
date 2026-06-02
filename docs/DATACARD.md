@@ -120,9 +120,11 @@ This dataset is licensed for **non-commercial research only**
 
 - **Code & docs**: this repository, on github.com.
 - **Data**: [https://ai.meta.com/datasets/luxremix-dataset/](https://ai.meta.com/datasets/luxremix-datasets/)
-  exposes the shards through a CDN. The portal serves a URL list (one
-  HTTPS URL per shard, filenames preserved) that rotates roughly every
-  six months. `download.py` consumes this URL list directly.
+  exposes the shards through a CDN. The portal serves `dataset-shards.txt`,
+  a TSV with header `file_name<TAB>cdn_link` and one row per shard
+  (filenames preserved). The CDN URLs rotate roughly every six months —
+  re-download the file when the old ones stop working. `download.py`
+  consumes this TSV directly.
 - **License**: Aria Synthetic Environments Dataset License Agreement
   (see [LICENSE.md](../LICENSE.md)).
 
