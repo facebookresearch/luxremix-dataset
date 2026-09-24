@@ -65,9 +65,10 @@ For the full dataset (~9.7 TB), run step 3 against the full
 | Public docs | `README.md`, `LICENSE.md`, `CITATION.cff`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `docs/{DATACARD,FORMAT,USAGE,ACKNOWLEDGMENTS}.md` |
 | Download | `download.py` (HTTPS, parallel, optional unpack) |
 | Reference dataloader | `dataset.py` (PyTorch `IterableDataset`), `examples/quickstart.py`, `examples/training_loop.py` |
-| Perspective regeneration | `tools/generate_test_sv.py`, `tools/generate_test_mv.py`, `tools/erp_to_perspective.py`, `data/mask_strategies_*.json`, `data/camera_params_352.json` |
+| Perspective regeneration | `tools/generate_test_sv.py`, `tools/generate_test_mv.py`, `tools/erp_to_perspective.py`, `data/mask_strategies_*.json`, `data/camera_params_*.json` |
 | Visualisation | `tools/generate_vis_grid.py` |
 | Manifests | `data/shards_training.json`, `data/shards_test.json` |
+| Paper evaluation cases | `data/paper_eval_cases.json` (test scenes and lights scored in Tables 1 and 2) |
 
 ## License
 

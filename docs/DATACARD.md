@@ -31,6 +31,7 @@ paper *LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes*
 | Pass types | geometry (pass `0000` only), background (`1000`), OLAT (`1001`+), reference + 3 random mixes (`0000`–`0003`) |
 | File formats | EXR (HDR), PNG (LDR previews + masks), JPEG (auxiliary), JSON (metadata) |
 | Splits | Training: scene ids `000000`–`014648`; Test: `014649`–`015082`. Zero overlap. |
+| Paper evaluation subset | 30 test scenes, 112 (scene, light) cases, used for Tables 1 and 2 of the paper: `data/paper_eval_cases.json` (see [USAGE.md](USAGE.md#which-test-scenes-were-used-for-tables-1-and-2-of-the-paper)) |
 
 ### What each scene contains
 

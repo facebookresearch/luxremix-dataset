@@ -174,4 +174,5 @@ expected and the validator allows either.
 - The env-map HDRI files (Poly Haven, etc.) — see [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md).
 - The perspective test sets (`test-sv`, `test-mv`).
   Users who want perspective views can regenerate them from the ERP shards
-  via `tools/generate_test_sv.py` / `tools/generate_test_mv.py`.
+  via `tools/generate_test_sv.py` / `tools/generate_test_mv.py` (see
+  [USAGE.md](USAGE.md#5-regenerate-perspective-views-from-erp)).

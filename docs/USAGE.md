@@ -100,22 +100,34 @@ See `examples/training_loop.py` for a runnable starter.
 ## 5. Regenerate perspective views from ERP
 
 The released dataset is ERP panoramas. If you want perspective pinhole
-views (the format used by the LuxRemix paper for some evaluations), use:
+views (the format used by the LuxRemix paper for some evaluations), you
+need the test split from step 3 and the camera-parameter file for the
+test scenes you want:
+
+| File | Test scenes | Use it for |
+|---|---|---|
+| `data/camera_params_48.json` | 48 curated scenes | The perspective test sets used in the LuxRemix paper (`test-sv`, `test-mv`); Tables 1 and 2 score a [30-scene subset](#which-test-scenes-were-used-for-tables-1-and-2-of-the-paper) |
+| `data/camera_params_352.json` | The other 352 scenes | Additional perspective test data with no paper counterpart |
 
 ```bash
 # Single-view perspective (the test-sv format)
 python tools/generate_test_sv.py --erp-dir ./lx \
-    --camera-params data/camera_params_352.json --output-dir ./test-sv
+    --camera-params data/camera_params_48.json --output-dir ./test-sv
 
 # Multi-view perspective (the test-mv format)
 python tools/generate_test_mv.py --erp-dir ./lx \
-    --camera-params data/camera_params_352.json --output-dir ./test-mv
+    --camera-params data/camera_params_48.json --output-dir ./test-mv
 ```
 
-These scripts use the released `data/mask_strategies_*.json` and
-`data/camera_params_352.json` to deterministically reproduce the
-perspective geometry and (bit-exactly) the per-pass light masks used in
-the LuxRemix paper.
+Pass `data/camera_params_352.json` instead for the remaining scenes. Each
+script generates every scene listed in the file it is given.
+
+For the 48 curated scenes, the output is bit-exact with the paper's test
+sets, including the per-pass light masks, which are reproduced from
+`data/mask_strategies_*.json`. The 352 remaining scenes have no paper
+reference: their cameras were sampled with the same procedure, seeded per
+scene, and their masks use a seeded fallback, so repeated runs produce
+identical output.
 
 ## 6. Visualization
 
@@ -163,8 +175,22 @@ inquiries about commercial use.
 
 ### Is there a perspective version of the test split?
 
-The original LuxRemix paper used perspective versions of 48 curated test
-scenes (`test-sv`, `test-mv`). You can regenerate them from the released
-ERP shards using `tools/generate_test_sv.py` / `tools/generate_test_mv.py` (see step 5
-above). The released `mask_strategies_*.json` files make the regeneration
-bit-exact with the originals.
+Not as a download, but you can regenerate it. The original LuxRemix paper
+used perspective versions of 48 curated test scenes (`test-sv`,
+`test-mv`). Regenerate them from the released ERP shards with
+`data/camera_params_48.json` (see step 5 above); the output is bit-exact
+with the originals. `data/camera_params_352.json` covers the remaining 352
+test scenes.
+
+### Which test scenes were used for Tables 1 and 2 of the paper?
+
+30 of the 48 curated test scenes, with 112 (scene, light) cases in total.
+`data/paper_eval_cases.json` lists, for each scene, its `test-sv` view and
+the OLAT passes that are scored. After generating the 48 scenes (step 5),
+the ground-truth images are:
+
+- Table 1 (single-image lighting decomposition):
+  `test-sv/{scene}.{view_id}/{pass_id}.rgb_ldr_olat.png`, 112 images.
+- Table 2 (multi-view lighting harmonization):
+  `test-mv/{scene}/{view}.{pass_id}.rgb_ldr_olat.png` for every `view` in
+  `mv_eval_views`, 1,568 images.
